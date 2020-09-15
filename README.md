@@ -1,5 +1,5 @@
 # worst-fit #
-<h2> Gerenciamento de Memória <h2> <br>
+<h2> Gerenciamento de Memória <h2>
   Sistemas Operacionais II 
   
   <h2> Integrantes <h2>
