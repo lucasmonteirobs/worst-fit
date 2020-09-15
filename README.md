@@ -1,8 +1,8 @@
 # worst-fit #
-<h2> Gerenciamento de Memória <h2>
+ Gerenciamento de Memória <h2>
   Sistemas Operacionais II 
   
-  <h2> Integrantes <h2>
+   Integrantes <h2>
   
   Joao Pedro<br>
   Joao Rafael<br>
