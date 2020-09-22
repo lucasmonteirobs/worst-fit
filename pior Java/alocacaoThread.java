@@ -55,4 +55,4 @@ public class alocacaoThread extends Thread {
 			}
 		}
 		
-	}orstJava
+	}
