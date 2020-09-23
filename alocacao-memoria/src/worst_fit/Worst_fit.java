@@ -16,21 +16,27 @@ public class Worst_fit {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Processo[] Processos = new Processo[5];
+        Processo[] Processos = new Processo[1];
         int[] memoria = new int[10];
-        cargaInicial(memoria);
-        
-        alocacaoThread thread = new alocacaoThread();
-        execucaoThread thread2 = new execucaoThread();
+        cargaInicialMem(memoria);
+        cargaInicialPro(Processos);
+        alocacaoThread[] thread = new alocacaoThread[]{new alocacaoThread(Processos, memoria)};
+        execucaoThread[] thread2 = new execucaoThread[]{new execucaoThread(Processos, memoria)};
      
         
-        
+      thread[0].start();
+         
        
     }
-     public static void cargaInicial(int[] memoria){
+     public static void cargaInicialPro(Processo[] Processos){
+         
+     }
+     public static void cargaInicialMem(int[] memoria){
     for(int i = 0; i < memoria.length ; i++) {
       memoria[i] = -1;
+    
     }
+         System.out.println("Memoria incial -1 alocada");
   }
     
 }

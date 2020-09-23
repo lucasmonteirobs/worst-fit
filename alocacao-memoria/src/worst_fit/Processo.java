@@ -10,42 +10,52 @@ package worst_fit;
  * @author jpedr
  */
 public class Processo {
-    private int id;
-	public int tamanho;
-	public int duracao;
-	public String status = 'P';
+        private int id;
+	private int tamanho;
+	private int duracao;
+	private char status = 'P';
+        private int[] memoria;
         
-    public Processo(String status, int tamanho, int duracao) {
+    public Processo(char status, int tamanho, int duracao) {
     this.status = status;
     this.tamanho = tamanho;
     this.duracao = duracao;
+
   }
 
-  //  public String getStatus() {
-  //      return status;
-  //  }
+    public char getStatus() {
+        return status;
+    }
 
- //   public void setStatus(String status) {
-  //      this.status = status;
-  //  }
+    public void setStatus(char status) {
+        this.status = status;
+    }
 
-	//public int getId() {
-	//	return id;
-	//}
-	//public void setId(int id) {
-	//	this.id = id;
-	//}
-	//public int getTamanho() {
-	//	return tamanho;
-	//}
-	//public void setTamanho(int tamanho) {
-	//	this.tamanho = tamanho;
-	//}
-	//public int getDuracao() {
-	//	return duracao;
-	//}
-	//public void setDuracao(int duracao) {
-	//	this.duracao = duracao;
-	//}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getTamanho() {
+		return tamanho;
+	}
+	public void setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
+	public int getDuracao() {
+		return duracao;
+	}
+	public void setDuracao(int duracao) {
+		this.duracao = duracao;
+	}
+
+    public int[] getMemoria() {
+        return memoria;
+    }
+
+    public void setMemoria(int[] memoria) {
+        this.memoria = memoria;
+    }
     
 }

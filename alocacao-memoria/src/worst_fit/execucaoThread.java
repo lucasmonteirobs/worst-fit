@@ -15,9 +15,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class execucaoThread extends Thread {
-
-	public void run(int[] memoria, Processos[] Processos) {
+        
+    private Processo[] Processos;
+    private int [] memoria;
+    
+        public execucaoThread(/*int id, int tamanho, int duracao, char status,*/ Processo[] Processos, int[] memoria) {
             
+        //this.id = id;
+	//this.tamanho = tamanho;
+	//this.duracao = duracao;
+	//this.status = status;
+        this.Processos = Processos;
+        //this.memoria = memoria;
+            start();
+	}
+
+	public void run() {
+            int dur = 0;
+            int durz = 0;
             int i = 0;
             for(i = 0; i < Processos.length; i++) 
 		{			 
@@ -25,13 +40,14 @@ public class execucaoThread extends Thread {
                             
                             if((memoria[j] != -1) && (Processos[i].getStatus() == 'E')){
                                 
-                                if(duracao > 0){
-                                 Processo[i].duracao = Processo[i].duracao - 1;
+                                if(Processos[i].getDuracao() > 0){
+                                  dur = Processos[i].getDuracao() - 1;
+                                  Processos[i].setDuracao(dur);
                                          }else{
-                                    Processo[i].duracao = 0;
+                                    Processos[i].setDuracao(durz);
                                 }
-                                System.out.println(Processos[i].getId + " " + Processos[i].getTamanho + " " + Processos[i].getDtatus + " " + Processos[i].getDuracao);
-                             Processos[i].getStatus() == 'F'
+                                System.out.println(Processos[i].getId() + " " + Processos[i].getTamanho() + " " + Processos[i].getStatus() + " " + Processos[i].getDuracao());
+                             Processos[i].setStatus('F');
                             }
                             
                             if(Processos[i].getStatus() == 'F'){

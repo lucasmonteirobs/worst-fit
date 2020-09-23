@@ -17,16 +17,27 @@ import java.util.logging.Logger;
 
 
 public class alocacaoThread extends Thread {
-
-	//Processo[] Processos = new Processo[5];
-	
-	
-//	List<Processo> Processos;
-	public alocacaoThread() {
-            start();
+    
+  //  private int id;
+  //  private int tamanho;
+  // private int duracao;
+  //  private char status;
+    private Processo[] Processos;
+    private int[] memoria;
+    
+    
+	public alocacaoThread(/*int id, int tamanho, int duracao, char status,*/ Processo[] Processos, int[] memoria) {
+            
+        //this.id = id;
+	//this.tamanho = tamanho;
+	//this.duracao = duracao;
+	//this.status = status;
+        this.Processos = Processos;
+        this.memoria = memoria;
+            
 	}
 	
-	public void run(int[] memoria, Processos[] Processos) {
+	public void run() {
 		
         int count = 0;
 	int countM = 0;
@@ -38,9 +49,10 @@ public class alocacaoThread extends Thread {
 		{			 
 			for(int j = 0; j < memoria.length; j++) {
                             
-                            if(Processos[i].getTamanho > memoria.length){
+                            if(Processos[i].getTamanho() > memoria.length){
                                 //processo nao pode ser alocado
                                 countNaloc =+ 1;
+                                Processos[i].setStatus('N');
                             }
                             
                             if((memoria[j] == -1) && (Processos[i].getStatus() == 'P')){
@@ -65,7 +77,7 @@ public class alocacaoThread extends Thread {
                                                 }
 					}
                                 else {
-                              //  Processos[i] = 'E'; 
+                                Processos[i].setStatus('N');
                             }
                             
                         }
