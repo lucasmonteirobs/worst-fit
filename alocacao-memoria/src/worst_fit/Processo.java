@@ -11,12 +11,13 @@ package worst_fit;
  */
 public class Processo {
         private int id;
-	private int tamanho;
-	private int duracao;
-	private char status = 'P';
+	private int tamanho = 0;
+	private int duracao = 0;
+	private char status;
         private int[] memoria;
         
-    public Processo(char status, int tamanho, int duracao) {
+    public Processo(int id, char status, int tamanho, int duracao) {
+    this.id = id;
     this.status = status;
     this.tamanho = tamanho;
     this.duracao = duracao;
